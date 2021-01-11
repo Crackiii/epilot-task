@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Card from "../card";
 import { render, cleanup } from "@testing-library/react";
 
-describe("Trello Component", () => {
+describe("Card Component", () => {
   let list = null;
   beforeEach(() => {
     list = {
