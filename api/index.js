@@ -68,4 +68,74 @@ app.get("/getLists", async (req, res) => {
   res.send(results);
 });
 
+/**
+ * Create a card on a specific list
+ * @param name - Name of the card
+ * @param idList - Id of the list to which the card will be assigned
+ */
+const createCard = async (name, idList) => {
+  const path = `cards`;
+  return axios
+    .post(
+      `${baseUrl}/${path}?key=${key}&token=${token}&idList=${idList}&name=${name}`
+    )
+    .then((response) => response.data)
+    .catch((error) => error);
+};
+
+/**
+ * Create a card route
+ */
+app.post("/createCard", async (req, res) => {
+  const { name, idList } = req.body;
+  const card = await createCard(name, idList);
+  if (card.id) {
+    const cards = await getCards(idList);
+    res.send(cards);
+  } else {
+    res.send(card);
+  }
+});
+
+/**
+ * Move card from one list to another
+ * @param id - Id of the card
+ * @param idList - Id of the list to which you want to move the card
+ */
+const moveCard = (id, idList) => {
+  const path = `cards/${id}`;
+  return axios
+    .put(`${baseUrl}/${path}?key=${key}&token=${token}&idList=${idList}`)
+    .then((response) => response.data)
+    .catch((error) => error);
+};
+/**
+ * Move card route
+ */
+app.post("/moveCard", async (req, res) => {
+  const { id, idList } = req.body;
+  const card = await moveCard(id, idList);
+  res.send(card);
+});
+
+/**
+ * Delete a card
+ * @param id - Id of the card you want to delete
+ */
+const deleteCard = (id) => {
+  const path = `cards/${id}`;
+  return axios
+    .delete(`${baseUrl}/${path}?key=${key}&token=${token}`)
+    .then((response) => response.data)
+    .catch((error) => error);
+};
+/**
+ * Delete a card route
+ */
+app.post("/deleteCard", async (req, res) => {
+  const { id } = req.body;
+  const card = await deleteCard(id);
+  res.send(card);
+});
+
 app.listen(port, () => console.log(`LISTENING ON PORT ${port}`));
