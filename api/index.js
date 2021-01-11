@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 const key = process.env.APP_KEY;
 const token = process.env.TOKEN;
 const port = process.env.PORT;
-const baseUrl = "https://api.trello.com";
+const baseUrl = "https://api.trello.com/1";
 
 /**
  * Allow access to all origins
@@ -50,6 +50,7 @@ const getCards = async (id) => {
  * Send them back to the requested client
  * */
 app.get("/getLists", async (req, res) => {
+  console.log("REQUEST RECIEVED");
   const lists = await getLists();
   const results = [];
   /**
