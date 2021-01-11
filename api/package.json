@@ -1,0 +1,23 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "Accessing trello api through node js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crackiii/epilot-task.git"
+  },
+  "keywords": [
+    "trello-api",
+    "nodejs-trello-api"
+  ],
+  "author": "Nadeem Ahmad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crackiii/epilot-task/issues"
+  },
+  "homepage": "https://github.com/Crackiii/epilot-task#readme"
+}
