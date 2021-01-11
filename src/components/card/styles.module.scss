@@ -1,0 +1,38 @@
+.card {
+  border: 1px solid wheat;
+  margin-bottom: 5px;
+  padding: 5px 30px 5px 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  label {
+    width: 100%;
+    margin-left: 5px;
+  }
+
+  .cardRemove {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    font-size: 7px;
+    opacity: 0.5;
+    cursor: pointer;
+    transform: scale(0);
+    transition: transform 0.1s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover .cardRemove {
+    transform: scale(1);
+  }
+}
