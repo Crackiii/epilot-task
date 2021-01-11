@@ -17,6 +17,8 @@ Accessing trello api to manage your Todo's.
 - [x] To run the frontend run the following commands
   * `npm install` in the root directory of the app
   * `npm start`
+  * In the `src/services/fetch.js` the `baseURL = "http://localhost:4002";`
+   * If anyone intends to change the port on the `.env` should make the change here.
 
 # Testing
 
