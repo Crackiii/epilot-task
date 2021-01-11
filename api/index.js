@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
  * Get all the lists from specific board
  * @path (NDCWTLdz) id of the board
  */
-const getLists = async (url) => {
+const getLists = async () => {
   const path = "/boards/NDCWTLdz/lists";
   return axios
     .get(`${baseUrl}/${path}/?key=${key}&token=${token}`)

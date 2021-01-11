@@ -1,0 +1,17 @@
+.trello {
+  width: 50vw;
+  height: 80vh;
+  margin: auto;
+  margin-top: 70px;
+  position: relative;
+
+  h1 {
+    text-align: center;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Trello from "./components/trello";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Trello Todo App</h1>
+    <Trello />
   </React.StrictMode>,
   document.getElementById("root")
 );
